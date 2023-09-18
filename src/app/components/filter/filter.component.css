@@ -1,0 +1,17 @@
+.filter-container{
+    max-width: 100%;
+    background-color: rgb(255, 170, 0);
+
+    font-size: 17px;
+    padding: 1rem;
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.filter-label {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    flex: 1;
+}

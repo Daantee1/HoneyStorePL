@@ -1,1 +1,90 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --yellowlight: rgb(255,255,0);
+    --yellow: rgba(255,255,0,0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+  }
+
+.navbar{
+    overflow: hidden;
+}
+.bg-color {
+    background-color: #ffbb00;
+}
+.navbar-brand {
+    display: flex;
+    padding-left: 1rem;
+}
+
+.right-icons {
+    margin-left: auto;
+}
+
+svg{
+    width: 25px;
+    height: 25px;
+}
+.nav-item {
+    margin-right: 20px; 
+    transition: color 0.2s ease;
+}
+.logo {
+    width: 80px;
+    height: 80px;
+    
+}
+.logo-text {
+    display: flex;
+    align-items: center;
+    
+  }
+
+.brand-text {
+    margin-left: 10px; 
+  }
+.navcolorhover{
+    font-size: larger;
+    
+}
+
+.footer{
+    z-index: 100;
+    bottom: 0;
+    width: 100%;
+    
+
+}
+.btn-link{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.btn-link::after{
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    left: -100px;
+    top: -5px;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotate(20deg);
+    transition: transform 0.5s;
+   
+  }
+  .btn-link:hover::after{
+    transform: translateX(250px)  ;
+    
+  }
+
+
+
+
+

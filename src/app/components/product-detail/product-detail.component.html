@@ -1,0 +1,28 @@
+<div class="product-details" *ngIf="product">
+    <img class="product-img"  src="https://placekitten.com/300/300" />
+  
+    <div class="details">
+
+      <h2>{{ product.name }}</h2>
+
+      <p class="price ">Cena: {{ product.price.value}} zł</p>
+      <div class="pieces">
+
+      <p class="price ">Ilość sztuk: </p>
+      <div class="quantity-controls">
+        <button class="quantity-left-minus btn btn-danger btn-number" (click)="minusProduct()">-</button>
+        <input name="quantity" min="1" max="99"   class="quantity-piecies" [(ngModel)]="inputNumber" readonly>
+        <button class="quantity-right-plus btn btn-success btn-number"   (click)="plusProduct()">+</button>
+       
+        
+      </div>
+      
+    </div>
+    
+    <div class="description-contianer">
+      <button class="btn add-button btn-primary" (click)="addToCart(product)">Dodaj do koszyka</button>
+    <h4 >Opis:</h4>
+    <p class="description">{{product.description}}</p>
+  </div>
+    </div>
+  </div>

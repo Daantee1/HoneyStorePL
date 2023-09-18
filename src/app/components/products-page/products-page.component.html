@@ -1,0 +1,23 @@
+<div>
+    <img class="img-product" src="https://cdn.pixabay.com/photo/2018/05/16/22/45/marguerite-3407277_1280.jpg"  />
+</div>
+<div>
+    <app-filter  (sortAsc)="onAscendingSort()" (sortDesc)="onDescendingSort()"></app-filter>
+    
+</div>
+<p>Polecamy Produkty</p>
+
+<div class="product-container">
+    <div class="product" *ngFor="let product of productsPage">
+      <a [routerLink]="['/details', product.name]">
+      <img src="https://placekitten.com/300/300" />
+  
+      <div class="description">
+        <h4>{{product.name}}</h4>
+        <p class="price">{{product.price.value}} zł</p>
+      </div>
+    </a>
+    </div>
+    
+  </div>
+  

@@ -1,0 +1,43 @@
+<div class="register-container">
+    <h2>Rejestracja</h2>
+<form (ngSubmit)="submitForm()" #registrationForm="ngForm">
+    <div class="login">
+      <label for="login"class="login-text" > Imię i nazwisko </label>
+      <input type="text" name="login" class="login-input" [(ngModel)]="user.login" minlength="1" maxlength="15" required>
+    </div>
+    <div class="login">
+      <label for="e-mail" class="login-text"> Adres e-mail </label>
+      <input type="text"  name="e-mail" class="login-input" [(ngModel)]="user.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
+    </div>
+    <div class="login">
+        <label for="street" class="login-text"> Ulica </label>
+        <input type="text"  name="street" class="login-input" [(ngModel)]="user.street" required>
+      </div>
+      <div class="login">
+        <label for="city" class="login-text"> Miasto zamieszkania </label>
+        <input type="text"  name="city" class="login-input" [(ngModel)]="user.city" required>
+      </div>
+      <div class="login">
+        <label for="zipCode" class="login-text"> Kod pocztowy </label>
+        <input type="text"  name="zipCode" class="login-input" [(ngModel)]="user.zipCode" (input)="formatZipCode()" maxlength="6" required>
+      </div>
+      <div class="login">
+        <label for="phoneNumber" class="login-text"> Numer telefonu </label>
+        <input type="text"  name="phoneNumber" class="login-input" [(ngModel)]="user.phoneNumber" minlength="9"  maxlength="9" pattern="[0-9]*" inputmode="numeric" required>
+      </div>
+      <div class="login">
+        <label for="password" class="login-text"> Hasło </label>
+        <input type="password"  name="password" class="login-input" [(ngModel)]="user.password" minlength="6" required>
+      </div>
+      <div class="login">
+        <label for="password" class="login-text"> Potwierdź hasło </label>
+        <input type="password"  name="passwordConfirm" class="login-input" [(ngModel)]="user.passwordConfirm" (input)="checkPassword()" minlength="6" required>
+        <small *ngIf="passwordsDoNotMatch && user.passwordConfirm !== ''"> Hasła nie są identyczne</small>
+      </div>
+    <div>
+        
+      <button type="submit" class="btn btn-warning" [disabled]="!registrationForm.form.valid" >Zarejestruj się</button>
+    </div>
+  </form>
+  
+  </div>

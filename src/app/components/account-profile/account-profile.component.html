@@ -1,0 +1,73 @@
+
+ <ng-container *ngIf="(authService.isLoggedInObs | async) as isLoggedIn; else loginBlock"> 
+
+    <div class="container">
+        <ul class="list-group">
+            <li class="li-group" *ngFor="let item of ul" (click)="item.action()">
+              {{ item.label }}
+              
+            </li>
+            <button class="btn btnn btn-danger  " (click)="logout()">Wyloguj się</button>
+          </ul>
+        
+        
+    
+
+    <div class="container-option" *ngIf="selectedOption === 'daneKontaktowe'">
+
+        <h2 class="title-option">Dane kontaktowe </h2>
+        <div class="user-data"> 
+          <p> Imię i nazwisko: {{currentUser.fullname}}</p>
+          <p> Miasto: {{currentUser.city}}</p>
+          <p> Adres: {{currentUser.address}}</p>
+          <p> Kod pocztowy: {{currentUser.zipcode}}</p>
+          <p> Numer telefonu: {{currentUser.phonenumber}}</p>
+        </div>
+     
+      
+      
+      </div>
+
+      <div class="container-option" *ngIf="selectedOption === 'mojeZamowienia'">
+      
+        <h2 class="title-option">Moje Zamówienia</h2>
+
+        <div *ngFor="let product of currentProduct" class="product-data">
+          
+          <p>Nazwa produktu: {{ product.name }}</p>
+          <p>Cena produktu: {{ product.price }} zł</p>
+          <p>Ilość: {{ product.quantity }}</p>
+          <p class="status">Status: {{ product.status }}</p>
+        </div>
+
+        <div *ngIf="!currentProduct || currentProduct.length === 0">
+          <p class="no-product">Brak aktualnych zamówień.</p>
+        </div>
+        
+      </div>
+
+      <div class="container-option" *ngIf="selectedOption === 'zmienHaslo'">
+      
+        <h2 class="title-option" >Zmień hasło</h2>
+
+        <div class="login">
+          <label for="password" class="login-text"> Stare Hasło </label>
+          <input type="password"  name="password" class="login-input" [(ngModel)]="currentPassword" (input)="checkCurrentPassword()" required>
+          <label for="password" class="login-text"> Nowe Hasło </label>
+          <input type="password"  name="password" class="login-input" [(ngModel)]="password" required>
+          <label for="password" class="login-text"> Potwierdź Hasło </label>
+          <input type="password"  name="password" class="login-input" [(ngModel)]="passwordConfirm"  (input)="checkPassword()" required>
+          <small *ngIf="passwordsDoNotMatch && passwordConfirm !== ''"> Hasła nie są identyczne</small>
+          <button type="submit" class="btn btn-warning" (click)="changepassword()" [disabled]="passwordsDoNotMatch || !isCurrentPasswordValid || password === '' || passwordConfirm === ''">Zmień hasło</button>
+        </div>
+        
+      </div>
+    </div>
+    
+ </ng-container>
+
+
+
+   <ng-template #loginBlock>
+    <h4 class="nologin">Niestety, nie jesteś zalogowany</h4>
+</ng-template> 

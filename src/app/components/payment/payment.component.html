@@ -1,0 +1,36 @@
+<div class="container-payment" *ngIf="dataCartProduct.length > 0; else emptyCart">
+  <h3 class="user-title-data">Dane zamawiającego</h3>
+  <div class="user-data">
+      <p>Imię i nazwisko: {{ currentUser.fullname }}</p>
+      <p>Miasto: {{ currentUser.city }}</p>
+      <p>Adres: {{ currentUser.address }}</p>
+      <p>Kod pocztowy: {{ currentUser.zipcode }}</p>
+      <p>Numer telefonu: {{ currentUser.phonenumber }}</p>
+  </div>
+  <h3 class="product-title-data">Produkty</h3>
+  <div class="product-data" *ngFor="let product of dataCartProduct">
+      <p>Produkt: {{ product.name }}</p>
+      <p>Cena: {{ product.price.value }} zł</p>
+      <p>Ilość: {{ product.quantity }} </p>
+  </div>
+  <p class="total-amount">Łączna suma: {{totalAmount}} zł</p>
+  <button  class="btn btn-buy btn-success" (click)="buyIt()">Zapłać</button>
+  
+
+  <div class="d-flex align-items-center spinner" *ngIf="!loadingSpinner">
+    <strong role="status">Kupowanie... </strong>
+    <div class="spinner-border ms-auto" aria-hidden="true"></div>
+  </div>
+  <div *ngIf="!loadingSpinnerAdd" class="spinner d-flex align-items-center ms-auto">
+    <strong role="status" class="spinner-text">Kupiono!</strong>
+  </div>
+  
+ 
+</div>
+
+
+<ng-template #emptyCart>
+  <div class="cart-container">
+      <h2 class="emptyCartTitle">Brak produktów w koszyku!</h2>
+  </div>
+</ng-template>

@@ -1,0 +1,26 @@
+<div *ngIf="authService.isLoggedIn; else loginBlock">
+  <app-account-profile></app-account-profile>
+</div>
+
+<ng-template #loginBlock>
+<div class="login-container">
+  <h2>Logowanie</h2>
+<form >
+  <div class="login">
+    <label for="login"class="login-text" > Adres e-mail </label>
+    <input type="text" name="email" class="login-input" [(ngModel)]="email" required>
+  </div>
+  <div class="login">
+    <label for="password" class="login-text"> Hasło </label>
+    <input type="password"  name="password" class="login-input" [(ngModel)]="password" required>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-warning" (click)="login()" >Zaloguj się</button>
+  </div>
+</form>
+
+<a class="nav-link" href="/RegisterPage">Zarejestruj się</a>
+</div>
+</ng-template>
+
+

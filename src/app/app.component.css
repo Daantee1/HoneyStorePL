@@ -1,0 +1,72 @@
+body {
+
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.4), rgb(251, 255, 205));
+  overflow: auto;
+  font-family: 'Lato', sans-serif;
+}
+.component-container{
+  margin-bottom: 12.3rem;
+  
+}
+.btn-floating {
+  transition-duration: 0.3s;
+}
+.nav-link {
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.btn-floating:hover {
+  background-color: rgb(255, 255, 0, 0.4);
+  border-radius: 5%;
+}
+.nav-link:hover{
+  background-color: rgb(255, 255, 0, 0.4);
+  border-radius: 10px;
+}
+.nav-link::after{
+  
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  left: -100px;
+  top: -5px;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(20deg);
+  transition: transform 0.5s;
+  
+}
+.nav-link:hover::after{
+  transform: translateX(250px)  ;
+}
+.login-string{
+  position: relative;
+  margin-top: 3px;
+  overflow: hidden;
+}
+.badge{
+  
+  border-radius: 50%; 
+  background-color: #ff0000; 
+  color: #ffffff;
+  
+}
+
+@media (max-width: 768px) {
+  .nav-link:hover::after {
+    transform: translateX(1000px) 
+  
+  }
+}
+@media (max-width: 1200px) {
+  .nav-link:hover::after {
+    transform: translateX(1100px) 
+  
+  }
+}

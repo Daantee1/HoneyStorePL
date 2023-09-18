@@ -1,0 +1,23 @@
+<div class="cart-container" *ngIf="dataCartProduct.length > 0; else emptyCart">
+    <h2>Produkty w koszyku</h2>
+    <ul>
+      <li class="product-cart" *ngFor="let product of dataCartProduct">
+       <h5>{{ product.name }}</h5>
+        <h5>Cena: {{ product.price.value }} zł</h5>
+        <h5>Ilość: {{product.quantity}}</h5>
+        <button type="button" class="btn btn-light btn-delete" (click)="deleteProduct(product)">Usuń</button>
+        
+      </li>
+      <h5 class="total-amount">Łączna suma: {{totalAmount}} zł</h5>
+      
+    </ul>
+    <button type="button" class="btn btn-buy btn-success" [disabled]="!isLoggedIn"   (click)="buyIt()">Zrealizuj zamówienie</button>
+    <small *ngIf="!isLoggedIn"> Musisz być zalgowany, żeby kupić produkty!</small>
+  </div>
+  
+  <ng-template #emptyCart>
+    <div class="cart-container">
+      <h2 class="emptyCartTitle">Brak produktów w koszyku!</h2>
+    </div>
+  </ng-template>
+  

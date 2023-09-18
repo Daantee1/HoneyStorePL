@@ -1,0 +1,112 @@
+.product-details {
+  display: flex;
+  position: relative;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.product-img {
+  display: inline-block;
+  position: relative;
+  height: 400px;
+  margin-left: 5rem;
+  width: 100%;
+  max-width: 100%;
+}
+h2 {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+.price {
+  font-size: larger;
+  margin-left: 2rem;
+}
+
+.pieces {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-self: flex-start;
+  margin-left: 2rem;
+}
+
+.pieces input {
+  width: 3rem;
+  text-align: center;
+  flex: 1;
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.pieces p {
+  margin: 0;
+}
+
+.pieces button {
+  width: 2em;
+  height: 2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+h4 {
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+.description {
+  margin-left: 2rem;
+}
+.description-contianer {
+  
+  text-align: left;
+  margin-right: 1rem;
+  
+}
+.add-button{
+    position: relative;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    background-color: greenyellow;
+    border-color:  greenyellow;
+    color: white;
+    
+}
+.add-button:hover{
+  background-color:  greenyellow;
+  border-color:  greenyellow;
+  color: red;
+}
+
+@media (max-width: 768px) {
+    .product-img{
+        margin: auto;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+  .product-details {
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .description-contianer {
+    position: relative;
+    overflow: hidden;
+  }
+  h2 {
+    margin-top: 1rem;
+  }
+  .details{
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
+
+}

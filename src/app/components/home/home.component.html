@@ -1,0 +1,11 @@
+
+<div >
+<img class="img-product" src="https://cdn.pixabay.com/photo/2016/08/02/14/42/banner-1563543_1280.jpg" />
+</div>
+
+<p>Bestseller</p>
+<div>
+    <app-filter></app-filter>
+    <app-products [sortAsc]="filterComponent.ascendingCheckBox.value || false" [sortDesc]="filterComponent.descendingCheckBox.value || false"></app-products>
+</div>
+

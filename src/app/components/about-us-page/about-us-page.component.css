@@ -1,0 +1,23 @@
+h3 {
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-family: "Lato", sans-serif;
+  color: #8d5817;
+  font-size: 25px;
+  letter-spacing: 0.4px;
+  word-spacing: 1.2px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.text-container{
+    padding: 2rem;
+}
+
+h5{
+    text-indent: 10px;
+    color: #8d5817;
+    text-decoration:wavy;
+    font-weight: bolder;
+}

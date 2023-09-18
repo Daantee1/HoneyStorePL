@@ -1,0 +1,17 @@
+<div class="product-container">
+  <div class="product" *ngFor="let product of products">
+
+    <a  [routerLink]="'/details/' + product.name"
+    
+    >
+      <img src="https://placekitten.com/300/300" />
+      <div class="description">
+        <h4>{{ product.name }}</h4>
+        <p class="price">{{ product.price.value }} zł</p>
+      </div>
+    </a>
+    
+  </div>
+</div>
+
+
